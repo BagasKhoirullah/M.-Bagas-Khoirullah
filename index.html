@@ -95,7 +95,6 @@ pre{
   overflow-x:auto;
 }
 
-/* RUN BUTTON */
 button.run{
   margin-top:15px;
   padding:10px 20px;
@@ -122,9 +121,7 @@ footer{
   color:white;
 }
 
-/* ============================= */
-/* GLASSMORPHISM NAVY MODAL */
-/* ============================= */
+/* GLASS NAVY MODAL */
 
 .dartpad-modal{
   display:none;
@@ -147,10 +144,8 @@ footer{
   background:rgba(20, 40, 80, 0.45);
   backdrop-filter:blur(20px);
   border:1px solid rgba(255,255,255,0.2);
-  box-shadow:
-    0 8px 32px rgba(0,0,0,0.5),
-    0 0 15px rgba(42,82,152,0.6);
-  animation:glassZoom 0.4s ease;
+  box-shadow:0 8px 32px rgba(0,0,0,0.5),
+             0 0 15px rgba(42,82,152,0.6);
 }
 
 .dartpad-header{
@@ -171,12 +166,6 @@ footer{
   padding:6px 10px;
   border-radius:8px;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.close-btn:hover{
-  background:rgba(255,0,0,0.7);
-  transform:scale(1.1);
 }
 
 iframe{
@@ -184,11 +173,6 @@ iframe{
   width:100%;
   border:none;
   background:white;
-}
-
-@keyframes glassZoom{
-  from{transform:scale(0.8);opacity:0;}
-  to{transform:scale(1);opacity:1;}
 }
 </style>
 </head>
@@ -214,8 +198,20 @@ iframe{
 <!-- 1 -->
 <div class="section" id="class">
 <h2>1. Class dan Object</h2>
-<p>Class adalah blueprint untuk membuat object.</p>
+<p>
+Class merupakan blueprint atau cetakan yang digunakan untuk membuat sebuah object.
+Dalam konsep OOP, class berfungsi sebagai rancangan awal yang mendefinisikan
+atribut (data) dan method (perilaku). Object adalah hasil instansiasi dari class
+yang dapat digunakan dalam program. Dengan menggunakan class, struktur program
+menjadi lebih terorganisir dan modular.
+</p>
+
 <pre><code>
+// Nama   : M. Bagas Khoirullah
+// NIM    : 251410016
+// Umur   : 20 Tahun
+// Jurusan: Sistem Informasi
+
 class Car {
   String? model;
   String? color;
@@ -229,13 +225,26 @@ class Car {
   }
 }
 </code></pre>
+
 <button class="run" onclick="openDartPad('https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c')">Run Code</button>
 </div>
 
 <!-- 2 -->
 <div class="section" id="constructor">
 <h2>2. Constructor</h2>
+<p>
+Constructor adalah method khusus dalam class yang otomatis dipanggil saat object dibuat.
+Constructor digunakan untuk menginisialisasi nilai awal atribut agar object memiliki
+data yang valid sejak pertama kali dibuat. Dengan constructor, kita dapat memastikan
+setiap object memiliki nilai yang jelas dan terkontrol.
+</p>
+
 <pre><code>
+// Nama   : M. Bagas Khoirullah
+// NIM    : 251410016
+// Umur   : 20 Tahun
+// Jurusan: Sistem Informasi
+
 class Car {
   String model;
   String color;
@@ -247,13 +256,26 @@ class Car {
   }
 }
 </code></pre>
+
 <button class="run" onclick="openDartPad('https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c')">Run Code</button>
 </div>
 
 <!-- 3 -->
 <div class="section" id="validasi">
 <h2>3. Validasi Data</h2>
+<p>
+Validasi data dilakukan untuk memastikan bahwa data yang dimasukkan sesuai dengan
+aturan yang telah ditentukan. Dalam OOP, validasi sering dilakukan di dalam constructor
+atau setter untuk mencegah data tidak valid masuk ke dalam object. Hal ini penting
+untuk menjaga konsistensi dan keamanan data dalam sistem.
+</p>
+
 <pre><code>
+// Nama   : M. Bagas Khoirullah
+// NIM    : 251410016
+// Umur   : 20 Tahun
+// Jurusan: Sistem Informasi
+
 class Mahasiswa {
   String nama;
   String nim;
@@ -266,13 +288,26 @@ class Mahasiswa {
   }
 }
 </code></pre>
+
 <button class="run" onclick="openDartPad('https://dartpad.dev/c68517512487cf565f6e3691113ed8a7')">Run Code</button>
 </div>
 
 <!-- 4 -->
 <div class="section" id="encapsulation">
 <h2>4. Encapsulation</h2>
+<p>
+Encapsulation adalah teknik menyembunyikan data internal suatu class agar tidak dapat
+diakses langsung dari luar. Dalam Dart, hal ini dapat dilakukan dengan menggunakan
+private variable (diawali dengan underscore). Akses terhadap data dilakukan melalui
+getter dan setter sehingga keamanan serta kontrol terhadap data lebih terjamin.
+</p>
+
 <pre><code>
+// Nama   : M. Bagas Khoirullah
+// NIM    : 251410016
+// Umur   : 20 Tahun
+// Jurusan: Sistem Informasi
+
 class Person {
   String _name;
   int age;
@@ -288,13 +323,26 @@ class Person {
   }
 }
 </code></pre>
+
 <button class="run" onclick="openDartPad('https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3')">Run Code</button>
 </div>
 
 <!-- 5 -->
 <div class="section" id="named">
 <h2>5. Named Parameter Constructor</h2>
+<p>
+Named parameter constructor digunakan untuk meningkatkan keterbacaan dan fleksibilitas
+kode. Dengan menggunakan named parameter, pemanggilan constructor tidak harus mengikuti
+urutan parameter. Teknik ini sangat berguna ketika sebuah class memiliki banyak atribut
+agar kode tetap rapi dan mudah dipahami.
+</p>
+
 <pre><code>
+// Nama   : M. Bagas Khoirullah
+// NIM    : 251410016
+// Umur   : 20 Tahun
+// Jurusan: Sistem Informasi
+
 class Produk {
   final String id;
   final String nama;
@@ -307,6 +355,7 @@ class Produk {
   });
 }
 </code></pre>
+
 <button class="run" onclick="openDartPad('https://dartpad.dev/074198f7555c208bbd052b31be794bf3')">Run Code</button>
 </div>
 
@@ -316,7 +365,6 @@ class Produk {
 © 2026 - Laporan OOP Dart | Sistem Informasi
 </footer>
 
-<!-- MODAL -->
 <div id="dartpadModal" class="dartpad-modal">
   <div class="dartpad-container">
     <div class="dartpad-header">

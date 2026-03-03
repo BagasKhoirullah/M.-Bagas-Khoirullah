@@ -1,61 +1,112 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Laporan Materi OOP Dart</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f6f9;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        pre {
-            background-color: #1e1e1e;
-            color: #00ff88;
-            padding: 15px;
-            overflow-x: auto;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: 2px solid #2c3e50;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan OOP Dart - Modern</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    background: white;
+    margin: 40px 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.swap {
+    flex-direction: row-reverse;
+}
+
+.code-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+pre {
+    background: #1e1e1e;
+    color: #00ff88;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+iframe {
+    flex: 1;
+    min-width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    border: 2px solid #2a5298;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #2a5298;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+h2 {
+    color: #2a5298;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Nama : M. Bagas Khoirullah - 251410016</h1>
-<h1>LAPORAN MATERI OBJECT ORIENTED PROGRAMMING (OOP) - DART</h1>
+<header>
+    <h1>LAPORAN OOP DART</h1>
+    <p>M. Bagas Khoirullah - 251410016</p>
+</header>
 
-<div class="section box">
-<h2>1. Pengertian OOP</h2>
-<p>
-Object Oriented Programming (OOP) adalah paradigma pemrograman yang berorientasi pada objek.
-Dalam OOP, program dibangun menggunakan class dan object sehingga struktur kode menjadi lebih rapi,
-terorganisir, dan mudah dikembangkan.
-</p>
-<p>
-Keunggulan OOP antara lain: modularitas, reusable code, keamanan data (encapsulation),
-dan kemudahan maintenance pada aplikasi skala besar.
-</p>
-</div>
+<div class="container">
 
-<div class="section box">
-<h2>2. Class dan Object</h2>
+<!-- 1 -->
+<div class="section">
+<h2>1. Class dan Object</h2>
+<p>Class adalah blueprint untuk membuat object. Object merupakan hasil instansiasi dari class.</p>
+
+<div class="flex">
+<div class="code-box">
 <pre><code>
 class Car {
   String? model;
@@ -70,17 +121,22 @@ class Car {
   }
 }
 </code></pre>
-<p>
-Class adalah blueprint (cetakan) untuk membuat object.
-Object adalah hasil instansiasi dari class.
-Pada contoh di atas, Car memiliki atribut dan method.
-</p>
+<a href="https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c" target="_blank">
+<button>Run Code</button>
+</a>
+</div>
 
 <iframe src="https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c"></iframe>
 </div>
+</div>
 
-<div class="section box">
-<h2>3. Constructor</h2>
+<!-- 2 SWAP -->
+<div class="section">
+<h2>2. Constructor</h2>
+<p>Constructor digunakan untuk menginisialisasi nilai atribut saat object dibuat.</p>
+
+<div class="flex swap">
+<div class="code-box">
 <pre><code>
 class Car {
   String? model;
@@ -93,17 +149,22 @@ class Car {
   }
 }
 </code></pre>
-<p>
-Constructor adalah method khusus yang otomatis dipanggil saat object dibuat.
-Constructor digunakan untuk menginisialisasi nilai atribut.
-Dengan constructor, data object menjadi lebih terkontrol.
-</p>
+<a href="https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c" target="_blank">
+<button>Run Code</button>
+</a>
+</div>
 
 <iframe src="https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c"></iframe>
 </div>
+</div>
 
-<div class="section box">
-<h2>4. Validasi Data (Class Mahasiswa)</h2>
+<!-- 3 -->
+<div class="section">
+<h2>3. Validasi Data</h2>
+<p>Validasi mencegah kesalahan input dan menjaga konsistensi data.</p>
+
+<div class="flex">
+<div class="code-box">
 <pre><code>
 class Mahasiswa {
   String nama;
@@ -112,22 +173,27 @@ class Mahasiswa {
 
   Mahasiswa(this.nama, this.nim, this.ipk) {
     if (ipk < 0.0 || ipk > 4.0) {
-      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
+      throw ArgumentError('IPK harus 0.0 - 4.0');
     }
   }
 }
 </code></pre>
-<p>
-Validasi data penting untuk menjaga konsistensi dan mencegah kesalahan input.
-Pada contoh ini, IPK hanya diperbolehkan dalam rentang 0.0 sampai 4.0.
-Jika tidak sesuai, program akan menghasilkan error.
-</p>
+<a href="https://dartpad.dev/c68517512487cf565f6e3691113ed8a7" target="_blank">
+<button>Run Code</button>
+</a>
+</div>
 
 <iframe src="https://dartpad.dev/c68517512487cf565f6e3691113ed8a7"></iframe>
 </div>
+</div>
 
-<div class="section box">
-<h2>5. Encapsulation</h2>
+<!-- 4 SWAP -->
+<div class="section">
+<h2>4. Encapsulation</h2>
+<p>Encapsulation menyembunyikan data menggunakan private variable dan getter/setter.</p>
+
+<div class="flex swap">
+<div class="code-box">
 <pre><code>
 class Person {
   String _name;
@@ -144,17 +210,22 @@ class Person {
   }
 }
 </code></pre>
-<p>
-Encapsulation adalah proses menyembunyikan data internal class agar tidak dapat diakses langsung.
-Biasanya menggunakan private variable (diawali dengan _).
-Akses dilakukan melalui getter dan setter untuk menjaga keamanan data.
-</p>
+<a href="https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3" target="_blank">
+<button>Run Code</button>
+</a>
+</div>
 
 <iframe src="https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3"></iframe>
 </div>
+</div>
 
-<div class="section box">
-<h2>6. Constructor dengan Named Parameter</h2>
+<!-- 5 -->
+<div class="section">
+<h2>5. Named Parameter Constructor</h2>
+<p>Named parameter membuat kode lebih fleksibel dan mudah dibaca.</p>
+
+<div class="flex">
+<div class="code-box">
 <pre><code>
 class Produk {
   final String id;
@@ -172,26 +243,17 @@ class Produk {
   });
 }
 </code></pre>
-<p>
-Named parameter membuat kode lebih jelas dan mudah dipahami.
-Parameter bisa ditulis tanpa harus mengikuti urutan tertentu.
-Fitur ini sangat berguna pada class dengan banyak atribut.
-</p>
+<a href="https://dartpad.dev/074198f7555c208bbd052b31be794bf3" target="_blank">
+<button>Run Code</button>
+</a>
+</div>
 
 <iframe src="https://dartpad.dev/074198f7555c208bbd052b31be794bf3"></iframe>
 </div>
+</div>
 
-<div class="section box">
-<h2>7. Kesimpulan</h2>
-<p>
-OOP dalam Dart membantu pengembang membuat program yang terstruktur,
-mudah dipelihara, dan aman. Konsep seperti class, object, constructor,
-encapsulation, dan validasi data sangat penting dalam membangun aplikasi modern.
-Paradigma ini sangat cocok digunakan dalam pengembangan aplikasi mobile seperti Flutter.
-</p>
 </div>
 
 </body>
 </html>
-
 

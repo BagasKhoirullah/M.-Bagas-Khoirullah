@@ -95,19 +95,23 @@ pre{
   overflow-x:auto;
 }
 
+/* Tombol Run Glow */
 button.run{
   margin-top:15px;
   padding:10px 20px;
   border:none;
-  background:var(--primary);
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
   color:white;
   border-radius:8px;
   cursor:pointer;
   font-weight:bold;
+  box-shadow:0 0 10px rgba(42,82,152,0.8);
+  transition:0.3s;
 }
 
 button.run:hover{
-  background:#1e3c72;
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(42,82,152,1);
 }
 
 footer{
@@ -117,6 +121,80 @@ footer{
   background:var(--primary);
   color:white;
 }
+
+/* ============================= */
+/* GLASSMORPHISM NAVY DARTPAD */
+/* ============================= */
+
+.dartpad-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(10, 25, 47, 0.75);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  z-index:3000;
+  justify-content:center;
+  align-items:center;
+}
+
+.dartpad-container{
+  width:95%;
+  height:90%;
+  border-radius:20px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+
+  background:rgba(20, 40, 80, 0.45);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.5),
+    0 0 15px rgba(42,82,152,0.6);
+
+  animation:glassZoom 0.4s ease;
+}
+
+.dartpad-header{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+  padding:15px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+}
+
+.close-btn{
+  background:rgba(255,255,255,0.1);
+  border:none;
+  color:white;
+  font-size:16px;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.close-btn:hover{
+  background:rgba(255,0,0,0.7);
+  transform:scale(1.1);
+}
+
+iframe{
+  flex:1;
+  width:100%;
+  border:none;
+  background:white;
+}
+
+@keyframes glassZoom{
+  from{transform:scale(0.8);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
 </style>
 </head>
 
@@ -124,10 +202,6 @@ footer{
 
 <nav>
   <a href="#class">Class</a>
-  <a href="#constructor">Constructor</a>
-  <a href="#validasi">Validasi</a>
-  <a href="#encapsulation">Encapsulation</a>
-  <a href="#named">Named Parameter</a>
   <button onclick="toggleMode()">🌙</button>
 </nav>
 
@@ -138,18 +212,9 @@ footer{
 
 <div class="container">
 
-<!-- 1 -->
 <div class="section" id="class">
 <h2>1. Class dan Object</h2>
-<p>
-Tahap pertama dalam OOP adalah memahami konsep class dan object. 
-Class merupakan blueprint atau cetakan yang digunakan untuk membuat object. 
-Object adalah hasil instansiasi dari class yang memiliki atribut dan method.
-</p>
-<p>
-Pada tahap ini kita mendefinisikan atribut (data) seperti model dan color,
-serta method (perilaku) seperti start() dan stop().
-</p>
+<p>Class adalah blueprint untuk membuat object.</p>
 
 <pre><code>
 class Car {
@@ -166,140 +231,28 @@ class Car {
 }
 </code></pre>
 
-<a href="https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c" target="_blank">
-<button class="run">Run Code</button>
-</a>
+<button class="run"
+onclick="openDartPad('https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c')">
+Run Code
+</button>
+
 </div>
-
-<!-- 2 -->
-<div class="section" id="constructor">
-<h2>2. Constructor</h2>
-<p>
-Tahap kedua adalah penggunaan constructor. Constructor adalah method khusus 
-yang otomatis dijalankan ketika object dibuat. Tujuannya untuk menginisialisasi nilai atribut.
-</p>
-<p>
-Dengan constructor, kita dapat memastikan setiap object memiliki data awal yang jelas.
-</p>
-
-<pre><code>
-class Car {
-  String? model;
-  String? color;
-
-  Car(this.model, this.color);
-
-  void start() {
-    print('Car started!');
-  }
-}
-</code></pre>
-
-<a href="https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c" target="_blank">
-<button class="run">Run Code</button>
-</a>
-</div>
-
-<!-- 3 -->
-<div class="section" id="validasi">
-<h2>3. Validasi Data</h2>
-<p>
-Tahap ketiga adalah validasi data. Validasi bertujuan untuk menjaga konsistensi 
-dan mencegah kesalahan input.
-</p>
-<p>
-Pada contoh berikut, IPK hanya diperbolehkan dalam rentang 0.0 hingga 4.0.
-Jika tidak sesuai, program akan menghasilkan error.
-</p>
-
-<pre><code>
-class Mahasiswa {
-  String nama;
-  String nim;
-  double ipk;
-
-  Mahasiswa(this.nama, this.nim, this.ipk) {
-    if (ipk < 0.0 || ipk > 4.0) {
-      throw ArgumentError('IPK harus 0.0 - 4.0');
-    }
-  }
-}
-</code></pre>
-
-<a href="https://dartpad.dev/c68517512487cf565f6e3691113ed8a7" target="_blank">
-<button class="run">Run Code</button>
-</a>
-</div>
-
-<!-- 4 -->
-<div class="section" id="encapsulation">
-<h2>4. Encapsulation</h2>
-<p>
-Tahap keempat adalah encapsulation. Encapsulation adalah teknik menyembunyikan 
-data internal agar tidak dapat diakses langsung dari luar class.
-</p>
-<p>
-Biasanya menggunakan private variable (diawali dengan _) dan diakses melalui getter dan setter.
-Hal ini meningkatkan keamanan data dalam program.
-</p>
-
-<pre><code>
-class Person {
-  String _name;
-  int age;
-
-  Person(this._name, this.age);
-
-  void setName(String name) {
-    _name = name;
-  }
-
-  String getName() {
-    return _name;
-  }
-}
-</code></pre>
-
-<a href="https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3" target="_blank">
-<button class="run">Run Code</button>
-</a>
-</div>
-
-<!-- 5 -->
-<div class="section" id="named">
-<h2>5. Named Parameter Constructor</h2>
-<p>
-Tahap terakhir adalah penggunaan named parameter constructor. 
-Teknik ini membuat kode lebih fleksibel dan mudah dibaca.
-</p>
-<p>
-Named parameter memungkinkan kita memanggil parameter tanpa harus mengikuti urutan tertentu.
-</p>
-
-<pre><code>
-class Produk {
-  final String id;
-  final String nama;
-  final double harga;
-
-  Produk({
-    required this.id,
-    required this.nama,
-    required this.harga,
-  });
-}
-</code></pre>
-
-<a href="https://dartpad.dev/074198f7555c208bbd052b31be794bf3" target="_blank">
-<button class="run">Run Code</button>
-</a>
-</div>
-
 </div>
 
 <footer>
   © 2026 - Laporan OOP Dart | Sistem Informasi
 </footer>
+
+<!-- MODAL -->
+<div id="dartpadModal" class="dartpad-modal">
+  <div class="dartpad-container">
+    <div class="dartpad-header">
+      🚀 DartPad Runner
+      <button onclick="closeDartPad()" class="close-btn">✖</button>
+    </div>
+    <iframe id="dartpadFrame"></iframe>
+  </div>
+</div>
 
 <script>
 function toggleMode(){
@@ -315,6 +268,16 @@ window.addEventListener("scroll",()=>{
     }
   });
 });
+
+function openDartPad(link){
+  document.getElementById("dartpadFrame").src = link;
+  document.getElementById("dartpadModal").style.display = "flex";
+}
+
+function closeDartPad(){
+  document.getElementById("dartpadModal").style.display = "none";
+  document.getElementById("dartpadFrame").src = "";
+}
 </script>
 
 </body>

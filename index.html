@@ -3,110 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan OOP Dart - Modern</title>
+<title>Laporan OOP Dart - Final</title>
 
 <style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #333;
+:root{
+  --primary:#2a5298;
+  --dark-bg:#121212;
+  --light-bg:#f4f6f9;
+  --card-light:white;
+  --card-dark:#1e1e1e;
+  --text-light:#333;
+  --text-dark:#f1f1f1;
 }
 
-header {
-    text-align: center;
-    padding: 40px 20px;
-    color: white;
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--light-bg);
+  color:var(--text-light);
+  scroll-behavior:smooth;
+  transition:0.3s;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
+body.dark{
+  background:var(--dark-bg);
+  color:var(--text-dark);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+nav{
+  position:fixed;
+  width:100%;
+  background:var(--primary);
+  padding:15px 0;
+  text-align:center;
+  z-index:1000;
 }
 
-.section {
-    background: white;
-    margin: 40px 0;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
 }
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
+nav button{
+  background:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
 }
 
-.swap {
-    flex-direction: row-reverse;
+header{
+  text-align:center;
+  padding:120px 20px 60px;
+  background:linear-gradient(135deg,#1e3c72,#2a5298);
+  color:white;
 }
 
-.code-box {
-    flex: 1;
-    min-width: 300px;
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
 }
 
-pre {
-    background: #1e1e1e;
-    color: #00ff88;
-    padding: 15px;
-    border-radius: 10px;
-    overflow-x: auto;
+.section{
+  margin:60px 0;
+  padding:30px;
+  border-radius:15px;
+  background:var(--card-light);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  opacity:0;
+  transform:translateY(50px);
+  transition:all 0.6s ease;
 }
 
-iframe {
-    flex: 1;
-    min-width: 300px;
-    height: 350px;
-    border-radius: 10px;
-    border: 2px solid #2a5298;
+body.dark .section{
+  background:var(--card-dark);
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: none;
-    background: #2a5298;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
+.section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-button:hover {
-    background: #1e3c72;
+pre{
+  background:#1e1e1e;
+  color:#00ff88;
+  padding:15px;
+  border-radius:10px;
+  overflow-x:auto;
 }
 
-h2 {
-    color: #2a5298;
+button.run{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  background:var(--primary);
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button.run:hover{
+  background:#1e3c72;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  margin-top:60px;
+  background:var(--primary);
+  color:white;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#class">Class</a>
+  <a href="#constructor">Constructor</a>
+  <a href="#validasi">Validasi</a>
+  <a href="#encapsulation">Encapsulation</a>
+  <a href="#named">Named Parameter</a>
+  <button onclick="toggleMode()">🌙</button>
+</nav>
+
 <header>
-    <h1>LAPORAN OOP DART</h1>
-    <p>M. Bagas Khoirullah - 251410016</p>
+  <h1>LAPORAN OBJECT ORIENTED PROGRAMMING (OOP) - DART</h1>
+  <p>M. Bagas Khoirullah - 251410016</p>
 </header>
 
 <div class="container">
 
 <!-- 1 -->
-<div class="section">
+<div class="section" id="class">
 <h2>1. Class dan Object</h2>
-<p>Class adalah blueprint untuk membuat object. Object merupakan hasil instansiasi dari class.</p>
+<p>
+Tahap pertama dalam OOP adalah memahami konsep class dan object. 
+Class merupakan blueprint atau cetakan yang digunakan untuk membuat object. 
+Object adalah hasil instansiasi dari class yang memiliki atribut dan method.
+</p>
+<p>
+Pada tahap ini kita mendefinisikan atribut (data) seperti model dan color,
+serta method (perilaku) seperti start() dan stop().
+</p>
 
-<div class="flex">
-<div class="code-box">
 <pre><code>
 class Car {
   String? model;
@@ -121,22 +165,23 @@ class Car {
   }
 }
 </code></pre>
+
 <a href="https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c" target="_blank">
-<button>Run Code</button>
+<button class="run">Run Code</button>
 </a>
 </div>
 
-<iframe src="https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c"></iframe>
-</div>
-</div>
-
-<!-- 2 SWAP -->
-<div class="section">
+<!-- 2 -->
+<div class="section" id="constructor">
 <h2>2. Constructor</h2>
-<p>Constructor digunakan untuk menginisialisasi nilai atribut saat object dibuat.</p>
+<p>
+Tahap kedua adalah penggunaan constructor. Constructor adalah method khusus 
+yang otomatis dijalankan ketika object dibuat. Tujuannya untuk menginisialisasi nilai atribut.
+</p>
+<p>
+Dengan constructor, kita dapat memastikan setiap object memiliki data awal yang jelas.
+</p>
 
-<div class="flex swap">
-<div class="code-box">
 <pre><code>
 class Car {
   String? model;
@@ -149,22 +194,24 @@ class Car {
   }
 }
 </code></pre>
+
 <a href="https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c" target="_blank">
-<button>Run Code</button>
+<button class="run">Run Code</button>
 </a>
 </div>
 
-<iframe src="https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c"></iframe>
-</div>
-</div>
-
 <!-- 3 -->
-<div class="section">
+<div class="section" id="validasi">
 <h2>3. Validasi Data</h2>
-<p>Validasi mencegah kesalahan input dan menjaga konsistensi data.</p>
+<p>
+Tahap ketiga adalah validasi data. Validasi bertujuan untuk menjaga konsistensi 
+dan mencegah kesalahan input.
+</p>
+<p>
+Pada contoh berikut, IPK hanya diperbolehkan dalam rentang 0.0 hingga 4.0.
+Jika tidak sesuai, program akan menghasilkan error.
+</p>
 
-<div class="flex">
-<div class="code-box">
 <pre><code>
 class Mahasiswa {
   String nama;
@@ -178,22 +225,24 @@ class Mahasiswa {
   }
 }
 </code></pre>
+
 <a href="https://dartpad.dev/c68517512487cf565f6e3691113ed8a7" target="_blank">
-<button>Run Code</button>
+<button class="run">Run Code</button>
 </a>
 </div>
 
-<iframe src="https://dartpad.dev/c68517512487cf565f6e3691113ed8a7"></iframe>
-</div>
-</div>
-
-<!-- 4 SWAP -->
-<div class="section">
+<!-- 4 -->
+<div class="section" id="encapsulation">
 <h2>4. Encapsulation</h2>
-<p>Encapsulation menyembunyikan data menggunakan private variable dan getter/setter.</p>
+<p>
+Tahap keempat adalah encapsulation. Encapsulation adalah teknik menyembunyikan 
+data internal agar tidak dapat diakses langsung dari luar class.
+</p>
+<p>
+Biasanya menggunakan private variable (diawali dengan _) dan diakses melalui getter dan setter.
+Hal ini meningkatkan keamanan data dalam program.
+</p>
 
-<div class="flex swap">
-<div class="code-box">
 <pre><code>
 class Person {
   String _name;
@@ -210,49 +259,63 @@ class Person {
   }
 }
 </code></pre>
+
 <a href="https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3" target="_blank">
-<button>Run Code</button>
+<button class="run">Run Code</button>
 </a>
 </div>
 
-<iframe src="https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3"></iframe>
-</div>
-</div>
-
 <!-- 5 -->
-<div class="section">
+<div class="section" id="named">
 <h2>5. Named Parameter Constructor</h2>
-<p>Named parameter membuat kode lebih fleksibel dan mudah dibaca.</p>
+<p>
+Tahap terakhir adalah penggunaan named parameter constructor. 
+Teknik ini membuat kode lebih fleksibel dan mudah dibaca.
+</p>
+<p>
+Named parameter memungkinkan kita memanggil parameter tanpa harus mengikuti urutan tertentu.
+</p>
 
-<div class="flex">
-<div class="code-box">
 <pre><code>
 class Produk {
   final String id;
   final String nama;
   final double harga;
-  final int stok;
-  final String kategori;
 
   Produk({
     required this.id,
     required this.nama,
     required this.harga,
-    this.stok = 0,
-    this.kategori = 'Umum',
   });
 }
 </code></pre>
+
 <a href="https://dartpad.dev/074198f7555c208bbd052b31be794bf3" target="_blank">
-<button>Run Code</button>
+<button class="run">Run Code</button>
 </a>
 </div>
 
-<iframe src="https://dartpad.dev/074198f7555c208bbd052b31be794bf3"></iframe>
-</div>
 </div>
 
-</div>
+<footer>
+  © 2026 - Laporan OOP Dart | Sistem Informasi
+</footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+
+const sections=document.querySelectorAll(".section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    const top=sec.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>

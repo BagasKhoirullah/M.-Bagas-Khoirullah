@@ -225,11 +225,38 @@ class Car {
   }
 }
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/ec0b7406761a512ab4dd05ea42c8f90c')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/792d47afaf9e42195cbd53af8b647cee')">Run Code</button>
+</div>
+
+<div class="section" id="object">
+<h2>2. Object Instantiantion</h2>
+<p>
+Object instantiation adalah proses membuat sebuah object dari suatu class dalam pemrograman berorientasi objek (OOP). Pada proses ini, class yang berfungsi 
+sebagai blueprint digunakan untuk menghasilkan object yang dapat digunakan dalam program dan memiliki atribut serta metode yang telah didefinisikan dalam class tersebut.
+</p>
+<pre><code>
+class Car {
+  String? model;
+  String? color;
+}
+void main(
+void main()
+  
+void main() {
+  Car myCar = Car();
+
+  myCar.model = "Sedan";
+  myCar.color = "Merah";
+
+  print(myCar.model);
+  print(myCar.color);
+}
+</code></pre>
+<button class="run" onclick="openDartPad('https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c')">Run Code</button>
 </div>
 
 <div class="section" id="constructor">
-<h2>2. Constructor</h2>
+<h2>3. Constructor</h2>
 <p>
 Constructor adalah metode khusus dalam pemrograman berorientasi objek (OOP) yang secara otomatis dipanggil ketika sebuah object dibuat dari class. 
 Constructor digunakan untuk menginisialisasi atau memberikan nilai awal pada atribut yang dimiliki oleh object tersebut agar object dapat langsung digunakan sesuai dengan kebutuhan program. Contohnya :
@@ -250,7 +277,7 @@ class Car {
 </div>
 
 <div class="section" id="validasi">
-<h2>3. Validasi Data</h2>
+<h2>4. Validasi Data</h2>
 <p>
 Validasi adalah proses pemeriksaan terhadap data atau input untuk memastikan bahwa data tersebut benar, sesuai aturan, dan layak digunakan sebelum diproses lebih lanjut dalam sebuah program atau sistem. 
 Tujuan validasi adalah untuk mencegah kesalahan, menjaga keakuratan data, dan memastikan data yang masuk sesuai dengan ketentuan yang telah ditetapkan. Contohnya :
@@ -272,7 +299,7 @@ class Mahasiswa {
 </div>
 
 <div class="section" id="encapsulation">
-<h2>4. Encapsulation</h2>
+<h2>5. Encapsulation</h2>
 <p>
 Encapsulation adalah konsep dalam pemrograman berorientasi objek (OOP) yang digunakan untuk membungkus data (atribut) dan metode (fungsi) ke dalam satu kesatuan yaitu class, serta membatasi akses langsung terhadap data tersebut. 
 Tujuannya adalah untuk melindungi data agar tidak dapat diubah secara sembarangan dan hanya dapat diakses melalui metode tertentu yang telah ditentukan. Contohnya :
@@ -297,7 +324,7 @@ class Person {
 </div>
 
 <div class="section" id="named">
-<h2>5. Named Parameter Constructor</h2>
+<h2>6. Named Parameter Constructor</h2>
 <p>
 Named parameter adalah parameter dalam sebuah fungsi atau method yang dipanggil dengan menyebutkan nama parameternya secara langsung saat memberikan nilai. 
 Cara ini membuat kode lebih jelas, mudah dibaca, dan tidak bergantung pada urutan parameter, karena setiap nilai sudah ditentukan berdasarkan nama parameternya. Contohnya :

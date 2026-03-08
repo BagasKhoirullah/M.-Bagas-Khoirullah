@@ -183,7 +183,7 @@ iframe{
   <a href="#class">Class</a>
   <a href="#object">Object</a>
   <a href="#constructor">Constructor</a>
-  <a href="#validasi">Validasi</a>
+  <a href="#validasi">Practice</a>
   <a href="#encapsulation">Encapsulation</a>
   <a href="#keyword">Keyword</a>
   <a href="#named">Named</a>
@@ -206,15 +206,29 @@ Konsep ini juga membantu programmer mengelola program yang besar dengan membagi 
 </p>
 </div>
 
-<div class="section" id="class">
-<h2>1. Class dan Object</h2>
+<div class="section" id="Konsep">
+<h2>Konsep dasar</h2>
 <p>
-Class adalah rancangan atau blueprint dalam pemrograman berorientasi objek yang digunakan untuk mendefinisikan atribut (data) dan metode (fungsi). 
-Sementara itu, object adalah hasil atau instansi yang dibuat dari sebuah class sehingga dapat digunakan dalam program. Dengan kata lain, 
-class merupakan cetakan, sedangkan object adalah wujud nyata yang dibuat dari cetakan tersebut. Contohnya :
+<ul class="list">
+<li><span class="icon">I</span>span class="highlight">Class:</span> Blueprint atau cetakan untuk membuat objek.<li>
+<li><span class="icon">I</span>span class="highlight">Class:</span> Instance nyata yang tercipta dari sebuah class.<li>
+<li><span class="icon">I</span>span class="highlight">Class:</span> Representasikan data melalui variabel di dalam class.<li>
+<li><span class="icon">I</span>span class="highlight">Class:</span> Logika fungsional atau fungsi di dalam class.<li>
+</ul>
+</p>
+</div>
+
+<div class="section" id="class">
+<h2>1. Class Sederhana</h2>
+<p>
+Class adalah blueprint untuk membuat objek. Class Car memiliki atribut model dan color serta method start() dan stop(). Contohnya :
 </p>
 <pre><code>
-class Car {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Car {
   String? model;
   String? color;
 
@@ -233,16 +247,13 @@ class Car {
 <div class="section" id="object">
 <h2>2. Object Instantiantion</h2>
 <p>
-Object instantiation adalah proses membuat sebuah object dari suatu class dalam pemrograman berorientasi objek (OOP). Pada proses ini, class yang berfungsi 
-sebagai blueprint digunakan untuk menghasilkan object yang dapat digunakan dalam program dan memiliki atribut serta metode yang telah didefinisikan dalam class tersebut.
+Object instantiation adalah Proses menciptakan objek konkret dari class Car yang telah didefinisikan sebelumnya
+menggunakan fungsi main().
 </p>
 <pre><code>
-class Car {
-  String? model;
-  String? color;
-}
-void main(
-void main()
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
   
 void main() {
   Car myCar = Car();
@@ -260,11 +271,15 @@ void main() {
 <div class="section" id="constructor">
 <h2>3. Constructor</h2>
 <p>
-Constructor adalah metode khusus dalam pemrograman berorientasi objek (OOP) yang secara otomatis dipanggil ketika sebuah object dibuat dari class. 
-Constructor digunakan untuk menginisialisasi atau memberikan nilai awal pada atribut yang dimiliki oleh object tersebut agar object dapat langsung digunakan sesuai dengan kebutuhan program. Contohnya :
+Constructor adalah metode khusus dalam pemrograman yang secara otomatis dipanggil ketika sebuah object dibuat dari class. 
+Constructor memudahkan kita mengisi nilai atribut langsung saat objek diciptakan (inisialisasi).
 </p>
 <pre><code>
-class Car {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Car {
   String model;
   String color;
   Car(this.model, this.color);
@@ -277,14 +292,17 @@ class Car {
 <button class="run" onclick="openDartPad('https://dartpad.dev/8cae0e6bd3bd9d8672829abb427b50f1')">Run Code</button>
 </div>
 
-<div class="section" id="validasi">
-<h2>4. Validasi Data</h2>
+<div class="section" id="practice">
+<h2>4. Practice: Mahasiswa</h2>
 <p>
-Validasi adalah proses pemeriksaan terhadap data atau input untuk memastikan bahwa data tersebut benar, sesuai aturan, dan layak digunakan sebelum diproses lebih lanjut dalam sebuah program atau sistem. 
-Tujuan validasi adalah untuk mencegah kesalahan, menjaga keakuratan data, dan memastikan data yang masuk sesuai dengan ketentuan yang telah ditetapkan. Contohnya :
+Implementasi objek Mahasiswa untuk mengelola data akademik secara terstruktur.
 </p>
 <pre><code>
-class Mahasiswa {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Mahasiswa {
   String nama;
   String nim;
   double ipk;
@@ -301,11 +319,14 @@ class Mahasiswa {
 <div class="section" id="encapsulation">
 <h2>5. Encapsulation</h2>
 <p>
-Encapsulation adalah konsep dalam pemrograman berorientasi objek (OOP) yang digunakan untuk membungkus data (atribut) dan metode (fungsi) ke dalam satu kesatuan yaitu class, serta membatasi akses langsung terhadap data tersebut. 
-Tujuannya adalah untuk melindungi data agar tidak dapat diubah secara sembarangan dan hanya dapat diakses melalui metode tertentu yang telah ditentukan. Contohnya :
+Encapsulation adalah Teknik keamanan data dengan menyembunyikan akses langsung ke variabel internal menggunakan prefix underscore. Contohnya :
 </p>
 <pre><code>
-class Person {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Person {
   String _name;
   int age;
   Person(this._name, this.age);
@@ -321,13 +342,17 @@ class Person {
 <button class="run" onclick="openDartPad('https://dartpad.dev/042607dbb6918449efa5ac3eda1217d6')">Run Code</button>
 </div>
 
-<div class="section" id="keyword">
-<h2>6. Keyword</h2>
+<div class="section" id="this">
+<h2>6. This keyword</h2>
 <p>
 Sebagai rujukan eksplisit ke instance class saat ini untuk menghindari kebingungan nama antara field dan parameter.
 </p>
 <pre><code>
-class Product {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Product {
   string nama;
   product(this.nama);
 }
@@ -339,11 +364,14 @@ class Product {
 <div class="section" id="named">
 <h2>7. Named Parameter Constructor</h2>
 <p>
-Named parameter adalah parameter dalam sebuah fungsi atau method yang dipanggil dengan menyebutkan nama parameternya secara langsung saat memberikan nilai. 
-Cara ini membuat kode lebih jelas, mudah dibaca, dan tidak bergantung pada urutan parameter, karena setiap nilai sudah ditentukan berdasarkan nama parameternya. Contohnya :
+Penggunaan Named Parameters dan Required untuk menciptakan objek yang lebih deskriptif dan aman. Contohnya :
 </p>
 <pre><code>
-class Produk {
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+  
+  class Produk {
   final String id;
   final String nama;
   final double harga;

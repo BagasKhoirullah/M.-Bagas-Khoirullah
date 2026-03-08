@@ -270,12 +270,6 @@ class Car {
   void start() {
     print('Engine Online: $model');
   }
-}
-void main() {
-  Car myCar = Car("Sedan", "Merah");
-  myCar.start();
-  print(myCar.color);
-}
 
 </code></pre>
 <button class="run" onclick="openDartPad('https://dartpad.dev/8cae0e6bd3bd9d8672829abb427b50f1')">Run Code</button>
@@ -294,20 +288,10 @@ class Mahasiswa {
   double ipk;
   
   Mahasiswa(this.nama, this.nim, this.ipk) {
-    // Validasi sederhana untuk IPK (rentang 0.0 - 4.0)
     if (ipk < 0.0 || ipk > 4.0) {
       throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
     }
-  }
-  void tampilkanData() {
-    print('===== Data Mahasiswa =====');
-    print('Nama : $nama');
-    print('NIM  : $nim');
-    print('IPK  : $ipk');
-    print('==========================');
-  }
-  String toString() => 'Mahasiswa(nama: $nama, nim: $nim, ipk: $ipk)';
-}
+  
 </code></pre>
 <button class="run" onclick="openDartPad('https://dartpad.dev/2628883da1efca96cc13096ac3cbc74a')">Run Code</button>
 </div>

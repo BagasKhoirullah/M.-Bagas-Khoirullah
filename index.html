@@ -252,7 +252,7 @@ void main() {
   print(myCar.color);
 }
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/6733d6541be5257858f2f2d27f5d2870')">Run Code</button>
 </div>
 
 <div class="section" id="constructor">
@@ -265,15 +265,20 @@ Constructor digunakan untuk menginisialisasi atau memberikan nilai awal pada atr
 class Car {
   String model;
   String color;
-
   Car(this.model, this.color);
-
+  
   void start() {
-    print('Car started!');
+    print('Engine Online: $model');
   }
 }
+void main() {
+  Car myCar = Car("Sedan", "Merah");
+  myCar.start();
+  print(myCar.color);
+}
+
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/bdc56ffa40b7eea63abfc2030b587a4c')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/8cae0e6bd3bd9d8672829abb427b50f1')">Run Code</button>
 </div>
 
 <div class="section" id="validasi">
@@ -287,15 +292,34 @@ class Mahasiswa {
   String nama;
   String nim;
   double ipk;
-
+  
   Mahasiswa(this.nama, this.nim, this.ipk) {
+    // Validasi sederhana untuk IPK (rentang 0.0 - 4.0)
     if (ipk < 0.0 || ipk > 4.0) {
-      throw ArgumentError('IPK harus 0.0 - 4.0');
+      throw ArgumentError('IPK harus berada dalam rentang 0.0 - 4.0');
     }
   }
+  void tampilkanData() {
+    print('===== Data Mahasiswa =====');
+    print('Nama : $nama');
+    print('NIM  : $nim');
+    print('IPK  : $ipk');
+    print('==========================');
+  }
+  String toString() => 'Mahasiswa(nama: $nama, nim: $nim, ipk: $ipk)';
 }
+
+void main() {
+  Mahasiswa mhs1 = Mahasiswa('Budi Santoso', '20230001', 3.75);
+  Mahasiswa mhs2 = Mahasiswa('Siti Aminah', '20230002', 3.92);
+  mhs1.tampilkanData();
+  mhs2.tampilkanData();
+      
+  print(mhs1);
+}
+
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/c68517512487cf565f6e3691113ed8a7')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/2628883da1efca96cc13096ac3cbc74a')">Run Code</button>
 </div>
 
 <div class="section" id="encapsulation">
@@ -305,19 +329,24 @@ Encapsulation adalah konsep dalam pemrograman berorientasi objek (OOP) yang digu
 Tujuannya adalah untuk melindungi data agar tidak dapat diubah secara sembarangan dan hanya dapat diakses melalui metode tertentu yang telah ditentukan. Contohnya :
 </p>
 <pre><code>
-class Person {
-  String _name;
-  int age;
+class Mahasiswa {
+  String nama;
+  String nim;
+  double ipk;
 
-  Person(this._name, this.age);
+  Mahasiswa(this.nama, this.nim, this.ipk);
 
-  void setName(String name) {
-    _name = name;
+  void tampilkanData() {
+    print('Nama : $nama');
+    print('NIM  : $nim');
+    print('IPK  : $ipk');
   }
+}
 
-  String getName() {
-    return _name;
-  }
+void main() {
+  Mahasiswa mhs1 = Mahasiswa("M.Bagas Khoirullah", "251410016", 3.73);
+
+  mhs1.tampilkanData();
 }
 </code></pre>
 <button class="run" onclick="openDartPad('https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3')">Run Code</button>

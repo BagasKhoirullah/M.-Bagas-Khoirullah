@@ -308,16 +308,6 @@ class Mahasiswa {
   }
   String toString() => 'Mahasiswa(nama: $nama, nim: $nim, ipk: $ipk)';
 }
-
-void main() {
-  Mahasiswa mhs1 = Mahasiswa('Budi Santoso', '20230001', 3.75);
-  Mahasiswa mhs2 = Mahasiswa('Siti Aminah', '20230002', 3.92);
-  mhs1.tampilkanData();
-  mhs2.tampilkanData();
-      
-  print(mhs1);
-}
-
 </code></pre>
 <button class="run" onclick="openDartPad('https://dartpad.dev/2628883da1efca96cc13096ac3cbc74a')">Run Code</button>
 </div>
@@ -329,31 +319,39 @@ Encapsulation adalah konsep dalam pemrograman berorientasi objek (OOP) yang digu
 Tujuannya adalah untuk melindungi data agar tidak dapat diubah secara sembarangan dan hanya dapat diakses melalui metode tertentu yang telah ditentukan. Contohnya :
 </p>
 <pre><code>
-class Mahasiswa {
-  String nama;
-  String nim;
-  double ipk;
+class Person {
+  String _name;
+  int age;
+  Person(this._name, this.age);
+  void setName(String name) {
+    _name = name;
+  }
 
-  Mahasiswa(this.nama, this.nim, this.ipk);
-
-  void tampilkanData() {
-    print('Nama : $nama');
-    print('NIM  : $nim');
-    print('IPK  : $ipk');
+  String getName() {
+    return _name;
   }
 }
-
-void main() {
-  Mahasiswa mhs1 = Mahasiswa("M.Bagas Khoirullah", "251410016", 3.73);
-
-  mhs1.tampilkanData();
-}
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/23a0b5308e42a5af5b7712c426da6cf3')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/042607dbb6918449efa5ac3eda1217d6')">Run Code</button>
 </div>
 
+<div class="section" id="keyword">
+<h2>6. Keyword</h2>
+<p>
+Sebagai rujukan eksplisit ke instance class saat ini untuk menghindari kebingungan nama antara field dan parameter.
+</p>
+<pre><code>
+class Product {
+  string nama;
+  product(this.nama);
+}
+
+</code></pre>
+<button class="run" onclick="openDartPad('https://dartpad.dev/070be9ac7f8aa1ec1356a0f676ec7863')">Run Code</button>
+</div>
+  
 <div class="section" id="named">
-<h2>6. Named Parameter Constructor</h2>
+<h2>7. Named Parameter Constructor</h2>
 <p>
 Named parameter adalah parameter dalam sebuah fungsi atau method yang dipanggil dengan menyebutkan nama parameternya secara langsung saat memberikan nilai. 
 Cara ini membuat kode lebih jelas, mudah dibaca, dan tidak bergantung pada urutan parameter, karena setiap nilai sudah ditentukan berdasarkan nama parameternya. Contohnya :
@@ -371,7 +369,7 @@ class Produk {
   });
 }
 </code></pre>
-<button class="run" onclick="openDartPad('https://dartpad.dev/074198f7555c208bbd052b31be794bf3')">Run Code</button>
+<button class="run" onclick="openDartPad('https://dartpad.dev/c88bc9ff06cc4db604e642cc4c87d761')">Run Code</button>
 </div>
 
 </div>

@@ -187,6 +187,7 @@ iframe{
   <a href="#encapsulation">Encapsulation</a>
   <a href="#keyword">Keyword</a>
   <a href="#named">Named</a>
+  <a href="#quiz">Bonus</a>
   <button onclick="toggleMode()">🌙</button>
 </nav>
 
@@ -392,6 +393,42 @@ Penggunaan Named Parameters dan Required untuk menciptakan objek yang lebih desk
 Object Oriented Programming(OOP) adalah metode pemrograman yang menyusun program dengan menggunakan konsep class dan object sehingga kode menjadi lebih terstruktur, mudah dipahami, dan mudah dikembangkan. OOP memungkinkan penggabungan data dan fungsi dalam satu kesatuan serta memberikan perlindungan terhadap data melalui berbagai konsep seperti encapsulation, constructor, dan object instantiation. 
 Dengan menggunakan OOP, pengembangan program dapat dilakukan dengan lebih efisien, terorganisir, dan memudahkan proses pemeliharaan serta pengembangan sistem di masa depan.
 </p>
+</div>
+
+<div class="section" id="quiz">
+<h2>Quiz bonus : Class animal</h2>
+<p>
+Class mendefinisikan properti (data/atribut) dan method (perilaku) dari suatu objek, class animal mungkin memiliki properti name, age, dan
+method makeSound() (suara hewan). Contohnya :
+</p>
+<pre><code>
+// Nama   : M. Bagas Khoirullah
+// Nim    : 251410016
+// Kelas  : SI2A
+
+class Animal {
+  String name;
+  Animal(this.name);
+  void makeSound() {
+    print('Animal sound');
+  }
+}
+class Lion extends Animal {
+  Lion(String name) : super(name);
+  @override
+  void makeSound() {
+    print('Roar!');
+  }
+}
+void main() {
+  Animal animal = Animal('Animal');
+  animal.makeSound();
+  Lion lion = Lion('Lion');
+  lion.makeSound();
+  print('Animal name : ${lion.name}');
+}
+</code></pre>
+<button class="run" onclick="openDartPad('https://dartpad.dev/44c713d401ad6a842ca2eeeb5a88d317')">Run Code</button>
 </div>
   
 </div>
